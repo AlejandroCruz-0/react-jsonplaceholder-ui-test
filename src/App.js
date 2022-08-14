@@ -1,30 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-import {React,useEffect} from 'react';
+import { React, useEffect, useState } from "react";
 
 function App() {
+  const [post, setPost] = useState([]);
 
-  
+  useEffect(() => {
+    document.title = "react-jsonplaceholder-ui-test";
 
-  useEffect( () => {
-    document.title = 'react-jsonplaceholder-ui-test'
-  })
+    let update = true;
+
+    if (update) {
+      fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
+        .then((response) => response.json())
+        .then((data) => {
+          setPost(data);
+          console.log(data);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
+
+    return () => {
+      update = false;
+    };
+  });
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ul>
+          {
+            post?.map(({ id, title }) => (
+              <li key={id}>
+                <h3>{title}</h3>
+              </li>
+            ))}
+        </ul>
       </header>
     </div>
   );
