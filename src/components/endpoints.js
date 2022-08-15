@@ -1,9 +1,9 @@
 const endpoints = Object.freeze({
-    'users': Symbol('https://jsonplaceholder.typicode.com/users'),
-    'posts': Symbol('https://jsonplaceholder.typicode.com/posts'),
-    'albums': Symbol('https://jsonplaceholder.typicode.com/albums'),
-    'comments': Symbol('https://jsonplaceholder.typicode.com/comments'),   
-    'photos': Symbol('https://jsonplaceholder.typicode.com/photos'), 
+    'Users': 'https://jsonplaceholder.typicode.com/users',
+    'Albums': 'https://jsonplaceholder.typicode.com/albums',
+    'Comments': 'https://jsonplaceholder.typicode.com/comments',   
+    'Photos': 'https://jsonplaceholder.typicode.com/photos', 
+    'Posts': 'https://jsonplaceholder.typicode.com/posts/',
 });
 
 export default endpoints;

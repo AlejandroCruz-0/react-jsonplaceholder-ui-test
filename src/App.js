@@ -1,43 +1,42 @@
 import "./App.css";
 
 import { React, useEffect, useState } from "react";
+import endpoints from "./components/endpoints";
 
 function App() {
-  const [post, setPost] = useState([]);
+  const [posts, setPosts] = useState([]);
+
+  const getData = () => {
+    const apiEndpointWithLimit = endpoints.Posts + '?_limit=5"';
+    console.log(apiEndpointWithLimit);
+
+    fetch(apiEndpointWithLimit)
+      .then((response) => response.json())
+      .then((data) => {
+        setPosts(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   useEffect(() => {
     document.title = "react-jsonplaceholder-ui-test";
-
-    let update = true;
-
-    if (update) {
-      fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
-        .then((response) => response.json())
-        .then((data) => {
-          setPost(data);
-          console.log(data);
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
-    }
-
-    return () => {
-      update = false;
-    };
-  });
+    console.log("useEffect starting");
+    getData();
+  }, []);
 
   return (
     <div className="App">
       <header className="App-header">
         <ul>
-          {
-            post?.map(({ id, title }) => (
-              <li key={id}>
-                <h3>{title}</h3>
-              </li>
-            ))}
+          {posts?.map(({ id, title }) => (
+            <li key={id}>
+              <h3>{title}</h3>
+            </li>
+          ))}
         </ul>
+        
       </header>
     </div>
   );
