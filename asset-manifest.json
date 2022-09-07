@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AlejandroCruz-0/react-jsonplaceholder-ui-test/static/css/main.4de0fa12.css",
+    "main.js": "/AlejandroCruz-0/react-jsonplaceholder-ui-test/static/js/main.d6ca7662.js",
+    "static/js/787.56a91c34.chunk.js": "/AlejandroCruz-0/react-jsonplaceholder-ui-test/static/js/787.56a91c34.chunk.js",
+    "index.html": "/AlejandroCruz-0/react-jsonplaceholder-ui-test/index.html",
+    "main.4de0fa12.css.map": "/AlejandroCruz-0/react-jsonplaceholder-ui-test/static/css/main.4de0fa12.css.map",
+    "main.d6ca7662.js.map": "/AlejandroCruz-0/react-jsonplaceholder-ui-test/static/js/main.d6ca7662.js.map",
+    "787.56a91c34.chunk.js.map": "/AlejandroCruz-0/react-jsonplaceholder-ui-test/static/js/787.56a91c34.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4de0fa12.css",
+    "static/js/main.d6ca7662.js"
+  ]
+}
